@@ -1,5 +1,6 @@
-from sqlalchemy import Column, Integer, String, DateTime
 from datetime import datetime
+
+from sqlalchemy import Column, DateTime, Integer, String
 
 from app.database import Base
 
@@ -9,8 +10,7 @@ class Lead(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     created_at = Column(DateTime, default=datetime.utcnow)
-
-    name = Column(String)
-    contact = Column(String)
-    source = Column(String)
-    comment = Column(String)
+    name = Column(String, nullable=False)
+    contact = Column(String, nullable=False)
+    source = Column(String, nullable=False)
+    comment = Column(String, nullable=False)
