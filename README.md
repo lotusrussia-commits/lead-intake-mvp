@@ -180,3 +180,69 @@ http://127.0.0.1:8000/docs
 - авторизация API-ключом или JWT
 - контейнеризация (Docker)
 - автоматические тесты (pytest)
+
+## Демо
+
+Проект развернут на VPS с использованием **Coolify** и доступен через публичный URL.
+
+**Работающее приложение:**
+http://hlyhk4al5aos38uofcm6rxau.194.67.74.131.sslip.io
+
+**Swagger / API документация:**
+http://hlyhk4al5aos38uofcm6rxau.194.67.74.131.sslip.io/docs
+
+### Проверка API
+
+Главная страница:
+
+```text
+GET /
+```
+
+Ответ:
+
+```json
+{
+  "message": "Lead Intake MVP работает!"
+}
+```
+
+Создание лида:
+
+```text
+POST /lead
+```
+
+Пример запроса:
+
+```json
+{
+  "name": "Иван Петров",
+  "contact": "ivan@example.com",
+  "source": "website",
+  "comment": "Тестовый лид с VPS"
+}
+```
+
+Пример успешного ответа:
+
+```json
+{
+  "status": "success",
+  "message": "Заявка сохранена",
+  "id": 2
+}
+```
+
+### Деплой
+
+Приложение запущено на VPS:
+
+* **OS:** Ubuntu 24.04 LTS
+* **CPU:** 2 vCPU
+* **RAM:** 2 GB
+* **Диск:** 40 GB
+* **Платформа деплоя:** Coolify
+* **Web-сервер:** Uvicorn
+* **Порт приложения:** 8000
+* **Состояние:** Running
